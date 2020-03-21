@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env TELEGRAM_TOKEN=1121463392:AAFnbE6ZDU7w8cMAf46BUn9LyxHh2biFXIM node index.js",
+    "start": "cross-env TELEGRAM_BOT_TOKEN=1121463392:AAFnbE6ZDU7w8cMAf46BUn9LyxHh2biFXIM node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

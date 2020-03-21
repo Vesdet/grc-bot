@@ -1,6 +1,6 @@
 const Telegraf = require('telegraf');
 
-const TOKEN = process.env.TELEGRAM_TOKEN;
+const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new Telegraf(TOKEN);
 
 bot.start((ctx) => ctx.reply('Привет! Введи имя моба, чтобы узнать какими героями его бить!'));
