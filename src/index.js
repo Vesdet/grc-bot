@@ -23,4 +23,10 @@ bot.hears(/(.*)/i, (ctx) => {
   return ctx.reply('Мне такой моб не знаком :( Попробуй ввести его другое название');
 });
 
-bot.launch();
+bot.launch({
+  webhook: {
+    domain: 'grc-bot.herokuapp.com',
+    hookPath: '/RANDOM_ID',
+    port: process.env.PORT || 5000
+  }
+});
