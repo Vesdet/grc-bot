@@ -34,6 +34,10 @@ const hellDrider = ['адский драйдер', 'драйдер', 'адски
 
 const mechaTrojan = ['троянский конь', 'конь', 'троянский', 'троян', 'mecha trojan'];
 
+const tim = ['тим', 'tim', 'timoxaq'];
+
+const cat = ['cat', 'котя', 'котик', 'кот', 'кошка'];
+
 module.exports = {
   bonAppeti,
   terrorthorn,
@@ -52,5 +56,7 @@ module.exports = {
   voodooShaman,
   snowBeast,
   hellDrider,
-  mechaTrojan
+  mechaTrojan,
+  tim,
+  cat
 };
