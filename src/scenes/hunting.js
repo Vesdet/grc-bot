@@ -1,22 +1,22 @@
 const fs = require('fs');
 const Markup = require('telegraf/markup');
 const Scene = require('telegraf/scenes/base');
+
+const { actions, backCallback } = require('../common/actions');
+const { notCommand } = require('../common/commands');
 const dictionary = require('../hunting/dictionary.json');
 
 const hunt = new Scene('hunting');
 hunt.enter(({ reply }) =>
   reply('Введи имя моба, чтобы узнать какими героями его бить!',
-    Markup.keyboard(['Выйти'])
+    Markup.keyboard([actions.BACK])
       .oneTime()
       .resize()
       .extra()
   ));
-hunt.hears('Выйти', async ctx => {
-  await ctx.scene.leave();
-  return ctx.scene.enter('main')
-});
-hunt.hears(/(.*)/i, (ctx) => {
-  const mob = ctx.match[1].trim().toLowerCase();
+hunt.hears(actions.BACK, backCallback);
+hunt.hears(notCommand, (ctx) => {
+  const mob = ctx.message.text.trim().toLowerCase();
   const entity = Object.entries(dictionary).find(([key, value]) => value.includes(mob));
 
   if (entity) {
