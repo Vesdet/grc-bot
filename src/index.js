@@ -2,7 +2,7 @@ const Telegraf = require('telegraf');
 const Stage = require('telegraf/stage');
 const session = require('telegraf/session');
 
-const { hunt, main } = require('./scenes');
+const { main, hunt, equipment } = require('./scenes');
 const { commands } = require("./common/commands");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -12,7 +12,7 @@ const bot = new Telegraf(TOKEN);
 const stage = new Stage();
 
 // Scene registration
-stage.register(main, hunt);
+stage.register(main, hunt, equipment);
 
 bot.use(session());
 bot.use(stage.middleware());
@@ -23,7 +23,12 @@ bot.start(async ctx => {
 });
 
 bot.command(commands.NEWS, ctx => {
-  return ctx.reply('ВЫНЕСТИ ЭТУ СТРОКУ В ОТДЕЛЬНЫЙ ФАЙЛ');
+  return ctx.reply(
+    '1. Добавлена команда /news для просмотра списка последних обновлений.\n' +
+    '2. Раздел с мобами вынесен в отдельную опцию меню "Охота".\n' +
+    '3. Добавлен раздел с просмотром шмота по разным типам войск ("Сеты").\n' +
+    'Отдельная благодарность Pink Boobs :)'
+  );
 });
 
 bot.hears(/(.*)/i, (ctx) => {
@@ -31,9 +36,9 @@ bot.hears(/(.*)/i, (ctx) => {
 });
 
 bot.launch({
-  // webhook: {
-  //   domain: 'grc-bot.herokuapp.com',
-  //   hookPath: '/RANDOM_ID',
-  //   port: process.env.PORT || 5000
-  // }
+  webhook: {
+    domain: 'grc-bot.herokuapp.com',
+    hookPath: '/RANDOM_ID',
+    port: process.env.PORT || 5000
+  }
 });

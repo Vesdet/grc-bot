@@ -1,7 +1,11 @@
 const actions = {
-  HUNTING: 'Охота',
-  EQUIPMENT: 'Сеты',
-  BACK: 'Назад'
+  HUNTING: '⚡️Охота',
+  EQUIPMENT: '⚔️Сеты',
+  EQUIPMENT_INFANTRY: '🛡 Пехи',
+  EQUIPMENT_RANGED: '🏹 Луки',
+  EQUIPMENT_CAVALRY: '🐴 Кони',
+  EQUIPMENT_MIX: '🔮 Солянка',
+  BACK: '⬅️ Назад'
 };
 
 const backCallback = async ctx => {
