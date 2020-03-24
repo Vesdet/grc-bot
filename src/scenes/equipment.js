@@ -32,7 +32,6 @@ equipment.enter(({ reply }) =>
       [actions.EQUIPMENT_MIX],
       [actions.BACK]
     ])
-      .oneTime()
       .resize()
       .extra()
   ));

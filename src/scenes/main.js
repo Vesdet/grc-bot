@@ -7,7 +7,6 @@ const { notCommand } = require('../common/commands');
 const main = new Scene('main');
 main.enter(ctx => ctx.reply('Попробуй, что я умею, выбрав опцию из меню ниже',
   Markup.keyboard([actions.HUNTING, actions.EQUIPMENT])
-    .oneTime()
     .resize()
     .extra()
 ));

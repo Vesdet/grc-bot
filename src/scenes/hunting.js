@@ -10,7 +10,6 @@ const hunt = new Scene('hunting');
 hunt.enter(({ reply }) =>
   reply('Введи имя моба, чтобы узнать какими героями его бить!',
     Markup.keyboard([actions.BACK])
-      .oneTime()
       .resize()
       .extra()
   ));
