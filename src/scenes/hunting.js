@@ -1,8 +1,7 @@
 const fs = require('fs');
 const Markup = require('telegraf/markup');
 const Scene = require('telegraf/scenes/base');
-
-const dictionary = JSON.parse(fs.readFileSync('src/hunting/dictionary.json'));
+const dictionary = require('../hunting/dictionary.json');
 
 const hunt = new Scene('hunting');
 hunt.enter(({ reply }) =>

@@ -23,6 +23,10 @@ bot.start(async ctx => {
   return ctx.scene.enter('main');
 });
 
+bot.hears(/(.*)/i, (ctx) => {
+  return ctx.reply('Я не знаю такой команды :( Возможно, я обновился. Набери /start , чтобы увидеть, что я умею')
+});
+
 bot.launch({
   // webhook: {
   //   domain: 'grc-bot.herokuapp.com',

@@ -10,4 +10,8 @@ main.enter(ctx => ctx.reply('Попробуй, что я умею, выбрав 
 ));
 main.hears('Охота', (ctx) => ctx.scene.enter('hunting'));
 
+main.hears(/(.*)/i, (ctx) => {
+  return ctx.reply('Я не знаю такой команды :( Попробуй, что я умею, выбрав опцию из меню ниже')
+});
+
 module.exports = main;
