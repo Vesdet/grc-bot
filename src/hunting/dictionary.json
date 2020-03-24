@@ -1,0 +1,22 @@
+{
+  "bonAppeti": ["тощая вивиан", "вивиан", "тощая", "вивианка", "bon appeti"],
+  "terrorthorn": ["шип ужаса", "шип", "terrorthorn"],
+  "grimReaper": ["мрачный жнец", "жнец", "grim reaper"],
+  "hardrox": ["древний голем", "камень", "голем", "hardrox"],
+  "gargantua": ["гаргантюа", "гарга", "gargantua"],
+  "megaMaggot": ["магот", "mega maggot"],
+  "gryphon": ["грифон", "птичка", "gryphon"],
+  "tidalTitan": ["титан", "tidal titan"],
+  "blackwing": ["чернокрыл", "blackwing"],
+  "queenBee": ["королева пчёл", "королева пчел", "пчела", "пчелка", "пчёлка", "queen bee"],
+  "frostwing": ["ледокрыл", "frostwing"],
+  "noceros": ["рино", "носорог", "noceros"],
+  "jadeWyrm": ["нефритовый змей", "змей", "jade wyrm"],
+  "saberfang": ["саблезуб", "тигр", "saberfang"],
+  "voodooShaman": ["шаман вуду", "вуду", "шаман", "voodoo shaman"],
+  "snowBeast": ["вьюжник", "snow beast"],
+  "hellDrider": ["адский драйдер", "драйдер", "адский", "hell drider"],
+  "mechaTrojan": ["троянский конь", "конь", "троянский", "троян", "mecha trojan"],
+  "tim": ["тим", "tim", "timoxaq"],
+  "cat": ["cat", "котя", "котик", "кот", "кошка"]
+}
