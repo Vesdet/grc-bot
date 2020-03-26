@@ -48,6 +48,6 @@ bot.launch({
   webhook: {
     domain: 'grc-bot.herokuapp.com',
     hookPath: '/RANDOM_ID',
-    port: process.env.PORT || 5000
+    port: process.env.PORT ||  '0.0.0.0'
   }
 });
