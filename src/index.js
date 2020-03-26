@@ -8,6 +8,8 @@ const { commands } = require("./common/commands");
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new Telegraf(TOKEN);
 
+let userIDs = [];
+
 // Create scene manager
 const stage = new Stage();
 
@@ -18,21 +20,28 @@ bot.use(session());
 bot.use(stage.middleware());
 
 bot.start(async ctx => {
+  if (!userIDs.includes(ctx.message.from.id)) {
+    userIDs.push(ctx.message.from.id);
+  }
   await ctx.reply('Привет! Меня зовут GRc Bot :)');
   return ctx.scene.enter('main');
 });
 
 bot.command(commands.NEWS, ctx => {
   return ctx.reply(
-    '1. Добавлена команда /news для просмотра списка последних обновлений.\n' +
-    '2. Раздел с мобами вынесен в отдельную опцию меню "Охота".\n' +
-    '3. Добавлен раздел с просмотром шмота по разным типам войск ("Сеты").\n' +
-    'Отдельная благодарность Pink Boobs :)'
+    '1. Добавлены кнопки для выбора моба в разделе "Охота".\n' +
+    '2. Добавлен новый сет одежды для пехов.\n'
   );
 });
 
 bot.hears(/(.*)/i, (ctx) => {
-  return ctx.reply(`Я не знаю такой команды :( Возможно, я обновился (что появилось нового можно узнать, используя ${commands.NEWS}). Набери или нажми ${commands.START} , чтобы увидеть, что я умею`)
+  if (!userIDs.includes(ctx.message.from.id)) {
+    userIDs.push(ctx.message.from.id);
+    ctx.reply(`Я не знаю такой команды :( Возможно, я обновился (что появилось нового можно узнать, используя ${commands.NEWS}).`)
+  } else {
+    ctx.reply('Возможно ты ко мне давно не заглядывал. Начни с главного меню');
+  }
+  return ctx.scene.enter('main');
 });
 
 bot.launch({
