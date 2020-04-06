@@ -2,14 +2,13 @@ const Telegraf = require('telegraf');
 const Stage = require('telegraf/stage');
 const session = require('telegraf/session');
 
+const Database = require('./database');
 const { main, hunt, equipment } = require('./scenes');
 const { commands } = require("./common/commands");
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new Telegraf(TOKEN);
-
-let userIDs = [];
-
+Database.initDatabase('users.db');
 // Create scene manager
 const stage = new Stage();
 
@@ -20,8 +19,8 @@ bot.use(session());
 bot.use(stage.middleware());
 
 bot.start(async ctx => {
-  if (!userIDs.includes(ctx.message.from.id)) {
-    userIDs.push(ctx.message.from.id);
+  if (!Database.isUserExists(ctx.message.from.id)) {
+    Database.addUser(ctx.message.from.id);
   }
   await ctx.reply('Привет! Меня зовут GRc Bot :)');
   return ctx.scene.enter('main');
@@ -35,8 +34,8 @@ bot.command(commands.NEWS, ctx => {
 });
 
 bot.hears(/(.*)/i, (ctx) => {
-  if (!userIDs.includes(ctx.message.from.id)) {
-    userIDs.push(ctx.message.from.id);
+  if (!Database.isUserExists(ctx.message.from.id)) {
+    Database.addUser(ctx.message.from.id);
     ctx.reply(`Я не знаю такой команды :( Возможно, я обновился (что появилось нового можно узнать, используя ${commands.NEWS}).`)
   } else {
     ctx.reply('Возможно ты ко мне давно не заглядывал. Начни с главного меню');
@@ -45,9 +44,9 @@ bot.hears(/(.*)/i, (ctx) => {
 });
 
 bot.launch({
-  webhook: {
-    domain: 'grc-bot.herokuapp.com',
-    hookPath: '/RANDOM_ID',
-    port: process.env.PORT ||  '0.0.0.0'
-  }
+  // webhook: {
+  //   domain: 'grc-bot.herokuapp.com',
+  //   hookPath: '/RANDOM_ID',
+  //   port: process.env.PORT ||  '0.0.0.0'
+  // }
 });
