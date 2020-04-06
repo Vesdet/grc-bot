@@ -23,6 +23,7 @@ const actions = {
   EQUIPMENT_RANGED: '🏹 Луки',
   EQUIPMENT_CAVALRY: '🐴 Кони',
   EQUIPMENT_MIX: '🔮 Солянка',
+  DARKNESTS: '🔱 Походы на басты/врага',
   BACK: '⬅️ Назад'
 };
 

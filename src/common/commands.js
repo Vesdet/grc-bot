@@ -1,6 +1,7 @@
 const commands = {
   START: '/start',
-  NEWS: '/news'
+  NEWS: '/news',
+  USERS: '/users'
 };
 
 const notCommand = text => !Object.values(commands).includes(text);
