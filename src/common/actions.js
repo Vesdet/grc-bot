@@ -24,7 +24,7 @@ const actions = {
   EQUIPMENT_CAVALRY: '🐴 Кони',
   EQUIPMENT_MIX: '🔮 Солянка',
   DARKNESTS: '🔱 Походы на басты/врага',
-  DARKNESTS_FORMATION: '⚜ Построяния',
+  DARKNESTS_FORMATION: '⚜ Построения',
   DARKNESTS_FAMILIARS: '🐰 Фамильяры',
   BACK: '⬅️ Назад'
 };
