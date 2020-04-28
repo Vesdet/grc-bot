@@ -3,7 +3,7 @@ const Stage = require('telegraf/stage');
 const session = require('telegraf/session');
 
 const Database = require('./database');
-const { main, hunt, equipment } = require('./scenes');
+const { main, hunt, equipment, darknests, familiars } = require('./scenes');
 const { commands } = require('./common/commands');
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -14,7 +14,7 @@ Database.initDatabase('users.db');
 const stage = new Stage();
 
 // Scene registration
-stage.register(main, hunt, equipment);
+stage.register(main, hunt, equipment, darknests, familiars);
 
 bot.use(session());
 bot.use(stage.middleware());
@@ -32,7 +32,7 @@ bot.start(async ctx => {
 
 bot.command(commands.NEWS, ctx => {
   return ctx.reply(
-    '1. Добавлена схема походов на басты или врага.\n' +
+    '1. Добавлены подборки фамильяров по типу войск. Можно найти в разделе "Походы на басты/врага"\n' +
     'Особая благодарность Pink Boobs\n'
   );
 });

@@ -24,12 +24,15 @@ const actions = {
   EQUIPMENT_CAVALRY: '🐴 Кони',
   EQUIPMENT_MIX: '🔮 Солянка',
   DARKNESTS: '🔱 Походы на басты/врага',
+  DARKNESTS_FORMATION: '⚜ Построяния',
+  DARKNESTS_FAMILIARS: '🐰 Фамильяры',
   BACK: '⬅️ Назад'
 };
 
-const backCallback = async ctx => {
+const backCallback = async (ctx, prevScene) => {
+  const scene = typeof prevScene === 'string' ? prevScene : 'main';
   await ctx.scene.leave();
-  return ctx.scene.enter('main')
+  return ctx.scene.enter(scene);
 };
 
 module.exports = {

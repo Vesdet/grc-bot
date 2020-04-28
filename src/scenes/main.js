@@ -14,28 +14,7 @@ main.enter(ctx => ctx.reply('Попробуй, что я умею, выбрав 
 ));
 main.hears(actions.HUNTING, (ctx) => ctx.scene.enter('hunting'));
 main.hears(actions.EQUIPMENT, (ctx) => ctx.scene.enter('equipment'));
-main.hears(actions.DARKNESTS, async (ctx) => {
-  await ctx.replyWithHTML(
-    '1) Если идем <b>пехами</b> - бьем на <i>пех фаланге</i>\n' +
-    'НЕ берем подушку из 4 солдат других типов'
-  );
-  await ctx.replyWithHTML(
-    '2) Если идем <b>кавалерией</b> - бьем на <i>стрелковой фаланге</i> или <i>стрелковым клином</i> (если у врага солянка)\n' +
-    'Берем подушку из 4 солдат других типов'
-  );
-  await ctx.replyWithHTML(
-    '3) Если идем <b>стрелками</b>\n' +
-    '\n' +
-    'А) бьем <i>пехотной фалангой</i> или <i>кавалерийским клином</i>\n' +
-    'Берем подушку из 4 солдат других типов\n' +
-    '\n' +
-    'Б) У врага только кони-луки - бьем <i>кавалерийской фалангой</i>\n' +
-    'Берем подушку из 4 КОНЕЙ\n' +
-    '\n' +
-    'В) У врага кони-луки и меньше пехов - бьем <i>пех клином</i>\n' +
-    'Берем подушку из 4 солдат других типов'
-  );
-});
+main.hears(actions.DARKNESTS, (ctx) => ctx.scene.enter('darknests'));
 
 main.hears(commands.USERS, async (ctx) => {
   const users = Database.getAllUsers();
