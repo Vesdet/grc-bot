@@ -8,13 +8,18 @@ const Database = require('../database');
 
 const main = new Scene('main');
 main.enter(ctx => ctx.reply('Попробуй, что я умею, выбрав опцию из меню ниже',
-  Markup.keyboard([actions.HUNTING, actions.EQUIPMENT, actions.DARKNESTS, actions.SG_REGISTRATION])
+  Markup.keyboard([
+    [actions.HUNTING],
+    [actions.EQUIPMENT, actions.DARKNESTS],
+    [actions.SG_REGISTRATION, actions.FAMILIARS_LOOT]
+  ])
     .resize()
     .extra()
 ));
 main.hears(actions.HUNTING, (ctx) => ctx.scene.enter('hunting'));
 main.hears(actions.EQUIPMENT, (ctx) => ctx.scene.enter('equipment'));
 main.hears(actions.DARKNESTS, (ctx) => ctx.scene.enter('darknests'));
+main.hears(actions.FAMILIARS_LOOT, (ctx) => ctx.scene.enter('familiarsLoot'));
 main.hears(actions.SG_REGISTRATION, (ctx) => {
   ctx.replyWithHTML(
     '1. Переходим на боевые таланты и ставим боевой шмот\n' +

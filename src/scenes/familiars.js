@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Markup = require('telegraf/markup');
 const Scene = require('telegraf/scenes/base');
 

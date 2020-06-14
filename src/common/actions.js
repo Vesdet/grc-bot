@@ -27,6 +27,12 @@ const actions = {
   DARKNESTS_FORMATION: '⚜ Построения',
   DARKNESTS_FAMILIARS: '🐰 Фамильяры',
   SG_REGISTRATION: '🏆 СГ Регистрация',
+  FAMILIARS_LOOT: '📯 Фамы: все о прокачке',
+  FAMILIARS_LOOT_COMMON: 'Общая информация',
+  FAMILIARS_LOOT_FIRST: 'Пакт 1',
+  FAMILIARS_LOOT_SECOND: 'Пакт 2',
+  FAMILIARS_LOOT_THIRD: 'Пакт 3',
+  FAMILIARS_LOOT_FOURTH: 'Пакт 4',
   BACK: '⬅️ Назад'
 };
 
