@@ -26,6 +26,7 @@ const actions = {
   DARKNESTS: '🔱 Походы на басты/врага',
   DARKNESTS_FORMATION: '⚜ Построения',
   DARKNESTS_FAMILIARS: '🐰 Фамильяры',
+  SG_REGISTRATION: '🏆 СГ Регистрация',
   BACK: '⬅️ Назад'
 };
 
