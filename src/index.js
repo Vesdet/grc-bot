@@ -51,10 +51,4 @@ bot.hears(/(.*)/i, (ctx) => {
   return ctx.scene.enter('main');
 });
 
-bot.launch({
-  webhook: {
-    domain: 'grc-bot.herokuapp.com',
-    hookPath: '/RANDOM_ID',
-    port: process.env.PORT ||  '0.0.0.0'
-  }
-});
+bot.launch();
