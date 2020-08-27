@@ -30,6 +30,7 @@ equipment.enter(({ reply }) =>
     Markup.keyboard([
       [actions.EQUIPMENT_INFANTRY, actions.EQUIPMENT_RANGED, actions.EQUIPMENT_CAVALRY],
       [actions.EQUIPMENT_MIX],
+      [actions.EQUIPMENT_JEWELS],
       [actions.BACK]
     ])
       .resize()
@@ -41,6 +42,7 @@ equipment.hears(actions.EQUIPMENT_INFANTRY, equipmentCallback);
 equipment.hears(actions.EQUIPMENT_RANGED, equipmentCallback);
 equipment.hears(actions.EQUIPMENT_CAVALRY, equipmentCallback);
 equipment.hears(actions.EQUIPMENT_MIX, equipmentCallback);
+equipment.hears(actions.EQUIPMENT_JEWELS, ctx => ctx.scene.enter('jewels'));
 equipment.hears(notCommand, (ctx) => {
   return ctx.reply('Я не знаю такой команды :( Попробуй, что я умею, выбрав опцию из меню ниже');
 });

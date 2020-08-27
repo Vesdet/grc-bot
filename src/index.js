@@ -3,7 +3,7 @@ const Stage = require('telegraf/stage');
 const session = require('telegraf/session');
 
 const Database = require('./database');
-const { main, hunt, equipment, darknests, familiars, familiarsLoot } = require('./scenes');
+const { main, hunt, equipment, jewels, darknests, familiars, familiarsLoot } = require('./scenes');
 const { commands } = require('./common/commands');
 
 const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -14,7 +14,7 @@ Database.initDatabase('users.db');
 const stage = new Stage();
 
 // Scene registration
-stage.register(main, hunt, equipment, darknests, familiars, familiarsLoot);
+stage.register(main, hunt, equipment, jewels, darknests, familiars, familiarsLoot);
 
 bot.use(session());
 bot.use(stage.middleware());
