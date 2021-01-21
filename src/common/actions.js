@@ -18,6 +18,8 @@ const actions = {
   HUNTING_SNOWBEAST: 'Вьюжник',
   HUNTING_HELLDRIDER: 'Драйдер',
   HUNTING_MECHATROJAN: 'Конь',
+  HUNTING_COTTAGEROAR: 'Теремок',
+  HUNTING_HOODCLAW: 'Жуткая лапа',
   EQUIPMENT: '⚔️Сеты',
   EQUIPMENT_INFANTRY: '🛡 Пехи',
   EQUIPMENT_RANGED: '🏹 Луки',

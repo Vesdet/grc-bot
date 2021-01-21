@@ -16,6 +16,7 @@ hunt.enter(({ reply }) =>
       [actions.HUNTING_QUEENBEE, actions.HUNTING_FROSTWING, actions.HUNTING_NOCEROS],
       [actions.HUNTING_JADEWYRM, actions.HUNTING_SABERFANG, actions.HUNTING_VOODOOSHAMAN],
       [actions.HUNTING_SNOWBEAST, actions.HUNTING_HELLDRIDER, actions.HUNTING_MECHATROJAN],
+      [actions.HUNTING_COTTAGEROAR, actions.HUNTING_HOODCLAW],
       [actions.BACK]
     ])
       .resize()
